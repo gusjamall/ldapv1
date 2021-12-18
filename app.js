@@ -18,6 +18,11 @@ app.use('/subMenu', subMenuRoute);
 //router for ldap
 app.use('/ldap', ldapRoute);
 
+// default route
+app.use('/', (req, res) => {
+  res.send('welcome to SSL server');
+});
+
 app.listen(port, () => {
   console.log(`JDashboard Api.v1 listening at port: ${port}
   please use http://localhost:5000`);
